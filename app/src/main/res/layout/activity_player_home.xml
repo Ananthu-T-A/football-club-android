@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="top"
+    android:background="@color/secondary"
+    tools:context=".PlayerHome">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="@color/player"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:text="Player Home" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/player"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:id="@+id/profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Profile" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="9dp"
+        android:background="@color/player"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:id="@+id/news"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="News" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="9dp"
+        android:background="@color/player"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:id="@+id/practise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Practise Section" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="9dp"
+        android:background="@color/player"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:id="@+id/videos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Videos" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="9dp"
+        android:background="@color/player"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:id="@+id/consultation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Consultation" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="9dp"
+        android:background="@color/player"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:id="@+id/complaints"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Complaints" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="9dp"
+        android:background="@color/player"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:id="@+id/noc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Noc" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="9dp"
+        android:background="@color/player"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:id="@+id/ranks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ranks" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="9dp"
+        android:background="@color/player"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:id="@+id/communication"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Communication" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="9dp"
+        android:background="@color/player"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:id="@+id/fixture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="match Fixtures" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="9dp"
+        android:background="#DF2A2A"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:id="@+id/lg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout" />
+</LinearLayout>
