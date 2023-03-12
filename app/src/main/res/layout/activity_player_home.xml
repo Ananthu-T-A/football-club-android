@@ -64,16 +64,16 @@
         android:layout_height="wrap_content"
         android:text="Videos" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="9dp"
-        android:background="@color/player"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:id="@+id/consultation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Consultation" />
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="9dp"-->
+<!--        android:background="@color/player"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textStyle="bold"-->
+<!--        android:id="@+id/consultation"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Consultation" />-->
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_marginHorizontal="20dp"
