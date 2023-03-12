@@ -76,25 +76,26 @@ public class Login extends AppCompatActivity implements JsonResponse {
             String status = jo.getString("status");
             Log.d("pearl", status);
 
+
             if (status.equalsIgnoreCase("success")) {
                 JSONArray ja1 = (JSONArray) jo.getJSONArray("data");
                 logid = ja1.getJSONObject(0).getString("login_id");
-                usertype = ja1.getJSONObject(0).getString("user_type");
+                usertype = ja1.getJSONObject(0).getString("usertype");
 
                 SharedPreferences.Editor e = sh.edit();
                 e.putString("log_id", logid);
                 e.commit();
 
-                if(usertype.equals("user"))
+                if(usertype.equals("coach"))
                 {
                     Toast.makeText(getApplicationContext(),"Login Successfully", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), Coachhome.class));
                 }
-//                else if(usertype.equals("deliveryboy"))
-//                {
-//                    Toast.makeText(getApplicationContext(),"Login Successfully", Toast.LENGTH_SHORT).show();
-//                    startActivity(new Intent(getApplicationContext(),Deliveryhome.class));
-//                }
+                else if(usertype.equals("player"))
+                {
+                    Toast.makeText(getApplicationContext(),"Login Successfully", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(),PlayerHome.class));
+                }
 
             }
             else {

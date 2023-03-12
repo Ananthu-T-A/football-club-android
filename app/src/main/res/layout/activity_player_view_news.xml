@@ -7,7 +7,7 @@
     android:gravity="top"
     android:background="@color/secondary"
     android:layout_height="match_parent"
-    tools:context=".Coch_view_profile">
+    tools:context=".Player_view_news">
 
     <TextView
         android:id="@+id/textView2"
@@ -18,7 +18,7 @@
         android:textColor="@color/player"
         android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
-        android:text="My Profile" />
+        android:text="News" />
 
     <ListView
         android:id="@+id/lv"

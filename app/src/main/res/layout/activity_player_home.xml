@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".Coachhome">
-
+    android:orientation="vertical"
+    android:gravity="top"
+    android:background="@color/secondary"
+    tools:context=".PlayerHome">
 
     <TextView
         android:id="@+id/textView2"
@@ -18,7 +18,7 @@
         android:textColor="@color/player"
         android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
-        android:text="Coach Home" />
+        android:text="Player Home" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_marginHorizontal="20dp"
@@ -64,16 +64,16 @@
         android:layout_height="wrap_content"
         android:text="Videos" />
 
-    <!--    <androidx.appcompat.widget.AppCompatButton-->
-    <!--        android:layout_marginHorizontal="20dp"-->
-    <!--        android:layout_marginTop="9dp"-->
-    <!--        android:background="@color/player"-->
-    <!--        android:textColor="@color/white"-->
-    <!--        android:textStyle="bold"-->
-    <!--        android:id="@+id/consultation"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:text="Consultation" />-->
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="9dp"-->
+<!--        android:background="@color/player"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textStyle="bold"-->
+<!--        android:id="@+id/consultation"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Consultation" />-->
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_marginHorizontal="20dp"

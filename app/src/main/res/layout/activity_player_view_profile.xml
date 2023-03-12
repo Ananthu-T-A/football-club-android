@@ -7,7 +7,7 @@
     android:gravity="top"
     android:background="@color/secondary"
     android:layout_height="match_parent"
-    tools:context=".Coch_view_profile">
+    tools:context=".Player_view_profile">
 
     <TextView
         android:id="@+id/textView2"
