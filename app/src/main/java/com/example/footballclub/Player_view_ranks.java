@@ -2,6 +2,7 @@ package com.example.footballclub;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -15,11 +16,12 @@ import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class Player_view_practisesection extends AppCompatActivity implements JsonResponse{
+public class Player_view_ranks extends AppCompatActivity implements JsonResponse {
 
     ListView lv1;
-    String[] coach,practise,place,date,time,value;
+    String[] name,rank,value;
     SharedPreferences sh;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +29,7 @@ public class Player_view_practisesection extends AppCompatActivity implements Js
         getSupportActionBar().hide(); // hide the title bar
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full sc
-        setContentView(R.layout.activity_player_view_practisesection);
+        setContentView(R.layout.activity_player_view_ranks);
 
         sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
@@ -35,8 +37,8 @@ public class Player_view_practisesection extends AppCompatActivity implements Js
 
 
         JsonReq JR=new JsonReq();
-        JR.json_response=(JsonResponse) Player_view_practisesection.this;
-        String q = "/player_view_practise?lid="+sh.getString("log_id","");
+        JR.json_response=(JsonResponse) Player_view_ranks.this;
+        String q = "/player_view_rank?lid="+sh.getString("log_id","");
         q=q.replace(" ","%20");
         JR.execute(q);
     }
@@ -46,7 +48,7 @@ public class Player_view_practisesection extends AppCompatActivity implements Js
         try {
 
             String method=jo.getString("method");
-            if(method.equalsIgnoreCase("player_view_practise")){
+            if(method.equalsIgnoreCase("player_view_rank")){
                 String status=jo.getString("status");
                 Log.d("pearl",status);
                 if(status.equalsIgnoreCase("success")){
@@ -54,11 +56,9 @@ public class Player_view_practisesection extends AppCompatActivity implements Js
                     JSONArray ja1=(JSONArray)jo.getJSONArray("data");
 
 
-                    coach=new String[ja1.length()];
-                    practise=new String[ja1.length()];
-                    date=new String[ja1.length()];
-                    place=new String[ja1.length()];
-                    time=new String[ja1.length()];
+                    name=new String[ja1.length()];
+                    rank=new String[ja1.length()];
+
 
                     value=new String[ja1.length()];
 
@@ -70,13 +70,11 @@ public class Player_view_practisesection extends AppCompatActivity implements Js
 
 
 
-                        coach[i]=ja1.getJSONObject(i).getString("coach");
-                        practise[i]=ja1.getJSONObject(i).getString("practice");
-                        date[i]=ja1.getJSONObject(i).getString("date");
-                        place[i]=ja1.getJSONObject(i).getString("place");
-                        time[i]=ja1.getJSONObject(i).getString("time");
+                        name[i]=ja1.getJSONObject(i).getString("name");
+                        rank[i]=ja1.getJSONObject(i).getString("rank");
 
-                        value[i]="Coach: "+coach[i]+"\nPractise: "+practise[i]+"\nPlace: "+place[i]+"\nDate: "+date[i]+"\nTime: "+time[i];
+
+                        value[i]="Player: "+name[i]+"\nRank: "+rank[i];
 
 
 
@@ -103,5 +101,11 @@ public class Player_view_practisesection extends AppCompatActivity implements Js
 
             Toast.makeText(getApplicationContext(),e.toString(), Toast.LENGTH_LONG).show();
         }
+    }
+    public void onBackPressed() {
+        // TODO Auto-generated method stub
+        super.onBackPressed();
+        Intent b = new Intent(getApplicationContext(), PlayerHome.class);
+        startActivity(b);
     }
 }
