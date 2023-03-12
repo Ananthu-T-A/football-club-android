@@ -19,12 +19,13 @@ import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class Player_consultation extends AppCompatActivity implements JsonResponse {
+public class PlayerComplaints extends AppCompatActivity implements JsonResponse {
+
 
     ListView l1;
     String complaint;
     SharedPreferences sh;
-    String[] comp, reply, date, value;
+    String[] comp,reply,date,value;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,17 +34,16 @@ public class Player_consultation extends AppCompatActivity implements JsonRespon
         getSupportActionBar().hide(); // hide the title bar
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full sc
-        setContentView(R.layout.activity_player_consultation);
+        setContentView(R.layout.activity_player_complaints);
 
-
-        sh = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        l1 = findViewById(R.id.lvcomplaints);
-        EditText e1 = findViewById(R.id.complaint);
-        Button b1 = findViewById(R.id.button6);
+        sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        l1=findViewById(R.id.lvcomplaints);
+        EditText e1=findViewById(R.id.complaint);
+        Button b1=findViewById(R.id.button6);
 
         JsonReq JR = new JsonReq();
-        JR.json_response = (JsonResponse) Player_consultation.this;
-        String q = "/player_view_consulted?lid=" + sh.getString("log_id", "")+"&pid="+sh.getString("receiver_id","");
+        JR.json_response = (JsonResponse) PlayerComplaints.this;
+        String q = "/player_viewcomplaint?lid=" + sh.getString("log_id","");
         q = q.replace(" ", "%20");
         JR.execute(q);
 
@@ -55,11 +55,11 @@ public class Player_consultation extends AppCompatActivity implements JsonRespon
                 if (complaint.equalsIgnoreCase("")) {
                     e1.setError("Enter complaint to submit");
                     e1.setFocusable(true);
-                } else {
+                }else {
 
                     JsonReq JR = new JsonReq();
-                    JR.json_response = (JsonResponse) Player_consultation.this;
-                    String q = "/player_add_consulted?complaint=" + complaint + "&lid=" + sh.getString("log_id", "")+"&pid="+sh.getString("receiver_id","");
+                    JR.json_response = (JsonResponse) PlayerComplaints.this;
+                    String q = "/player_addcomplaint?complaint=" + complaint+"&lid=" + sh.getString("log_id","");
                     q = q.replace(" ", "%20");
                     JR.execute(q);
                 }
@@ -74,28 +74,28 @@ public class Player_consultation extends AppCompatActivity implements JsonRespon
             String method = jo.getString("method");
             Log.d("pearl", method);
 
-            if (method.equalsIgnoreCase("player_view_consulted")) {
+            if (method.equalsIgnoreCase("player_viewcomplaint")) {
                 String status = jo.getString("status");
                 if (status.equalsIgnoreCase("success")) {
 //                    Toast.makeText(getApplicationContext(), "test", Toast.LENGTH_LONG).show();
 
                     JSONArray ja1 = (JSONArray) jo.getJSONArray("data");
                     comp = new String[ja1.length()];
-                    reply = new String[ja1.length()];
-
+                    reply= new String[ja1.length()];
+                    date= new String[ja1.length()];
                     value = new String[ja1.length()];
 
 
                     for (int i = 0; i < ja1.length(); i++) {
 
-                        comp[i] = ja1.getJSONObject(i).getString("consulted");
-                        reply[i] = ja1.getJSONObject(i).getString("details");
-
+                        comp[i] = ja1.getJSONObject(i).getString("complaint");
+                        reply[i] = ja1.getJSONObject(i).getString("reply");
+                        date[i] = ja1.getJSONObject(i).getString("date");
 
 //                        Toast.makeText(getApplicationContext(), name[i]+" "+num[i], Toast.LENGTH_LONG).show();
 
 
-                        value[i] = "Consulted for : " + comp[i] + "\nReply : " + reply[i];
+                        value[i] = "Complaint : " + comp[i] + "\nReply : " + reply[i] + "\nDate : " + date[i];
                     }
                     ArrayAdapter<String> ar = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, value);
                     l1.setAdapter(ar);
@@ -105,30 +105,31 @@ public class Player_consultation extends AppCompatActivity implements JsonRespon
                 }
             }
 
-            if (method.equalsIgnoreCase("player_add_consulted")) {
+            if (method.equalsIgnoreCase("player_addcomplaint")) {
 
                 String status = jo.getString("status");
                 Log.d("pearl", status);
 
                 if (status.equalsIgnoreCase("success")) {
 
-                    Toast.makeText(getApplicationContext(), "you will soon receive reply here!", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(), Player_consultation.class));
+                    Toast.makeText(getApplicationContext(), "Complaint send Successful", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(), PlayerComplaints.class));
 
                 }
             }
 
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
             Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
         }
     }
-
-    public void onBackPressed() {
+    public void onBackPressed()
+    {
         // TODO Auto-generated method stub
         super.onBackPressed();
-        Intent b = new Intent(getApplicationContext(), Player_view_psysic.class);
+        Intent b=new Intent(getApplicationContext(),PlayerHome.class);
         startActivity(b);
     }
 }

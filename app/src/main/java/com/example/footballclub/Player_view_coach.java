@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -28,6 +30,10 @@ public class Player_view_coach extends AppCompatActivity implements JsonResponse
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
+        getSupportActionBar().hide(); // hide the title bar
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full sc
         setContentView(R.layout.activity_player_view_coach);
 
         sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
@@ -124,11 +130,11 @@ public class Player_view_coach extends AppCompatActivity implements JsonResponse
             @Override
             public void onClick(DialogInterface dialog, int item) {
 
-                if (items[item].equals("chat")) {
+                if (items[item].equals("Chat")) {
 
                     startActivity(new Intent(getApplicationContext(), ChatHere.class));
 
-                } else if (items[item].equals("call")) {
+                } else if (items[item].equals("Call")) {
 
                     Intent callIntent = new Intent(Intent.ACTION_CALL);
                     callIntent.setData(Uri.parse("tel:"+number));//change the number
@@ -141,5 +147,12 @@ public class Player_view_coach extends AppCompatActivity implements JsonResponse
 
         });
         builder.show();
+    }
+
+    public void onBackPressed() {
+        // TODO Auto-generated method stub
+        super.onBackPressed();
+        Intent b = new Intent(getApplicationContext(), PlayerHome.class);
+        startActivity(b);
     }
 }

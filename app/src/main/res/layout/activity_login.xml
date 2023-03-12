@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:gravity="center"
     android:orientation="vertical"
+    android:background="@color/player"
     android:layout_height="match_parent"
     tools:context=".Login">
 
@@ -13,7 +14,10 @@
     <TextView
         android:id="@+id/textView"
         android:textSize="30dp"
+        android:textColor="@color/secondary"
+        android:textStyle="bold"
         android:padding="10dp"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login Here" />
@@ -23,9 +27,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:padding="20dp"
+        android:textColor="@color/player"
+        android:textColorHint="#125003"
+        android:padding="15dp"
         android:background="@drawable/custom_input"
         android:layout_margin="10dp"
         android:inputType="textPersonName"
@@ -36,10 +40,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColor="@color/player"
+        android:textColorHint="#125003"
         android:background="@drawable/custom_input"
-        android:padding="20dp"
+        android:padding="15dp"
         android:layout_margin="10dp"
         android:inputType="textPassword"
         android:hint="password" />
@@ -50,16 +54,18 @@
         android:layout_width="200dp"
         android:padding="20dp"
         android:backgroundTint="#C3EF92"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:background="@drawable/custombtn"
         android:layout_height="wrap_content"
         android:text="Let Me In" />
 
     <TextView
         android:id="@+id/t2"
-        android:textSize="20dp"
+        android:textSize="13dp"
         android:textStyle="bold"
         android:layout_marginTop="40dp"
-        android:textColor="#BA1D1D"
+        android:textColor="#FFFFFF"
         android:textAlignment="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

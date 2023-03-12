@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -29,6 +31,10 @@ public class Player_view_psysic extends AppCompatActivity implements JsonRespons
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
+        getSupportActionBar().hide(); // hide the title bar
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full sc
         setContentView(R.layout.activity_player_view_psysic);
 
         sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
@@ -117,7 +123,7 @@ public class Player_view_psysic extends AppCompatActivity implements JsonRespons
         e.putString("receiver_id",loginid[i]);
         e.putString("name",psysician[i]);
         e.commit();
-        final CharSequence[] items = {"Chat","Call"};
+        final CharSequence[] items = {"Chat","Call","consultation"};
 
         AlertDialog.Builder builder = new AlertDialog.Builder(Player_view_psysic.this);
         // builder.setTitle("Add Photo!");
@@ -125,15 +131,20 @@ public class Player_view_psysic extends AppCompatActivity implements JsonRespons
             @Override
             public void onClick(DialogInterface dialog, int item) {
 
-                if (items[item].equals("chat")) {
+                if (items[item].equals("Chat")) {
 
                     startActivity(new Intent(getApplicationContext(), ChatHere.class));
 
-                } else if (items[item].equals("call")) {
+                } else if (items[item].equals("Call")) {
                     Intent callIntent = new Intent(Intent.ACTION_CALL);
                     callIntent.setData(Uri.parse("tel:"+number));//change the number
                     startActivity(callIntent);
 //                    startActivity(new Intent(getApplicationContext(), Player_view_nutri.class));
+
+                }
+                else if (items[item].equals("consultation")) {
+
+                    startActivity(new Intent(getApplicationContext(), Player_consultation.class));
 
                 }
 
@@ -141,5 +152,11 @@ public class Player_view_psysic extends AppCompatActivity implements JsonRespons
 
         });
         builder.show();
+    }
+    public void onBackPressed() {
+        // TODO Auto-generated method stub
+        super.onBackPressed();
+        Intent b = new Intent(getApplicationContext(), PlayerHome.class);
+        startActivity(b);
     }
 }

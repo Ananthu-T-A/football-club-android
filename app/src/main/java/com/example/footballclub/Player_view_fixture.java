@@ -2,6 +2,7 @@ package com.example.footballclub;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -15,11 +16,13 @@ import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class Player_view_practisesection extends AppCompatActivity implements JsonResponse{
+public class Player_view_fixture extends AppCompatActivity implements JsonResponse {
+
 
     ListView lv1;
-    String[] coach,practise,place,date,time,value;
+    String[] leauge,match,team1,team2,date,time,value;
     SharedPreferences sh;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +30,7 @@ public class Player_view_practisesection extends AppCompatActivity implements Js
         getSupportActionBar().hide(); // hide the title bar
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full sc
-        setContentView(R.layout.activity_player_view_practisesection);
+        setContentView(R.layout.activity_player_view_fixture);
 
         sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
@@ -35,8 +38,8 @@ public class Player_view_practisesection extends AppCompatActivity implements Js
 
 
         JsonReq JR=new JsonReq();
-        JR.json_response=(JsonResponse) Player_view_practisesection.this;
-        String q = "/player_view_practise?lid="+sh.getString("log_id","");
+        JR.json_response=(JsonResponse) Player_view_fixture.this;
+        String q = "/player_view_fixture?lid="+sh.getString("log_id","");
         q=q.replace(" ","%20");
         JR.execute(q);
     }
@@ -46,7 +49,7 @@ public class Player_view_practisesection extends AppCompatActivity implements Js
         try {
 
             String method=jo.getString("method");
-            if(method.equalsIgnoreCase("player_view_practise")){
+            if(method.equalsIgnoreCase("player_view_fixture")){
                 String status=jo.getString("status");
                 Log.d("pearl",status);
                 if(status.equalsIgnoreCase("success")){
@@ -54,10 +57,11 @@ public class Player_view_practisesection extends AppCompatActivity implements Js
                     JSONArray ja1=(JSONArray)jo.getJSONArray("data");
 
 
-                    coach=new String[ja1.length()];
-                    practise=new String[ja1.length()];
+                    leauge=new String[ja1.length()];
+                    match=new String[ja1.length()];
                     date=new String[ja1.length()];
-                    place=new String[ja1.length()];
+                    team1=new String[ja1.length()];
+                    team2=new String[ja1.length()];
                     time=new String[ja1.length()];
 
                     value=new String[ja1.length()];
@@ -70,13 +74,14 @@ public class Player_view_practisesection extends AppCompatActivity implements Js
 
 
 
-                        coach[i]=ja1.getJSONObject(i).getString("coach");
-                        practise[i]=ja1.getJSONObject(i).getString("practice");
+                        leauge[i]=ja1.getJSONObject(i).getString("category");
+                        match[i]=ja1.getJSONObject(i).getString("fixture");
                         date[i]=ja1.getJSONObject(i).getString("date");
-                        place[i]=ja1.getJSONObject(i).getString("place");
+                        team1[i]=ja1.getJSONObject(i).getString("team1");
+                        team2[i]=ja1.getJSONObject(i).getString("team2");
                         time[i]=ja1.getJSONObject(i).getString("time");
 
-                        value[i]="Coach: "+coach[i]+"\nPractise: "+practise[i]+"\nPlace: "+place[i]+"\nDate: "+date[i]+"\nTime: "+time[i];
+                        value[i]="League: "+leauge[i]+"\nMatch: "+match[i]+"\nTeam 1: "+team1[i]+"\nTeam 2: "+team2[i]+"\nDate: "+date[i]+"\nTime: "+time[i];
 
 
 
@@ -104,4 +109,12 @@ public class Player_view_practisesection extends AppCompatActivity implements Js
             Toast.makeText(getApplicationContext(),e.toString(), Toast.LENGTH_LONG).show();
         }
     }
+
+    public void onBackPressed() {
+        // TODO Auto-generated method stub
+        super.onBackPressed();
+        Intent b = new Intent(getApplicationContext(), PlayerHome.class);
+        startActivity(b);
+    }
+
 }
