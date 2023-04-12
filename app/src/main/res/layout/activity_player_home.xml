@@ -18,7 +18,7 @@
         android:textColor="@color/player"
         android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
-        android:text="Player Home" />
+        android:text="PLAYER HOME" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_marginHorizontal="20dp"
@@ -132,7 +132,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="9dp"
-        android:background="#DF2A2A"
+        android:background="#02DCF8"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:id="@+id/lg"

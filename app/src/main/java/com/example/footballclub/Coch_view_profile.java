@@ -40,7 +40,7 @@ public class Coch_view_profile extends AppCompatActivity implements JsonResponse
         try {
 
             String method = jo.getString("method");
-            if (method.equalsIgnoreCase("player_my_profile")) {
+            if (method.equalsIgnoreCase("coachviewprofile")) {
                 String status = jo.getString("status");
                 Log.d("pearl", status);
                 if (status.equalsIgnoreCase("success")) {

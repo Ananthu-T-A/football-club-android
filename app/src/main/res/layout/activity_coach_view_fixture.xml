@@ -7,19 +7,18 @@
     android:gravity="top"
     android:background="@color/secondary"
     android:layout_height="match_parent"
-    tools:context=".Player_view_psysic">
+    tools:context=".Player_view_fixture">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:gravity="center"
         android:textSize="30dp"
-        android:background="@color/player"
         android:textStyle="bold"
-        android:textColor="@color/white"
-
+        android:textColor="@color/player"
+        android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
-        android:text="PHYSIOTHERAPIST" />
+        android:text="Match Fixtures" />
 
     <ListView
         android:id="@+id/lv"

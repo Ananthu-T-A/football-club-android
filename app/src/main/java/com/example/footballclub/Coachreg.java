@@ -135,7 +135,7 @@ public class Coachreg extends AppCompatActivity implements JsonResponse, View.On
                 } else {
 
 
-                    String q = "http://" + MainActivity.text + "/api/coachreg?clubid="+club_id;
+                    String q = "http://" + MainActivity.text + "/api/coachreg";
 //            String q = "http://" +IpSetting.ip+"/api/user_upload_file";
 
                     Toast.makeText(getApplicationContext(), "Byte Array:" + byteArray.length, Toast.LENGTH_LONG).show();
@@ -144,12 +144,25 @@ public class Coachreg extends AppCompatActivity implements JsonResponse, View.On
                     Map<String, byte[]> aa = new HashMap<>();
 
                     aa.put("image", byteArray);
-                    aa.put("lid", Login.logid.getBytes());
+
+
+//                    aa.put("lid", Login.logid.getBytes());
+//                    Toast.makeText(getApplicationContext(), "yyyyyyyy" + byteArray.length, Toast.LENGTH_LONG).show();
+
+                    aa.put("clubid", club_id.getBytes());
+//                    Toast.makeText(getApplicationContext(), "aaaaa" + byteArray.length, Toast.LENGTH_LONG).show();
+
                     aa.put("fname", fname.getBytes());
                     aa.put("lname", lname.getBytes());
-                    aa.put("palce", place.getBytes());
+                    aa.put("place", place.getBytes());
+//                    Toast.makeText(getApplicationContext(), "bbbb" + place.getBytes(), Toast.LENGTH_LONG).show();
+
                     aa.put("phone", phone.getBytes());
                     aa.put("email", email.getBytes());
+                    aa.put("username", uname.getBytes());
+                    aa.put("password", passw.getBytes());
+//                    Toast.makeText(getApplicationContext(), "ccccc" + byteArray.length, Toast.LENGTH_LONG).show();
+
                     aa.put("dob", dob.getBytes());
 
                     FileUploadAsync fua = new FileUploadAsync(q);
@@ -157,6 +170,8 @@ public class Coachreg extends AppCompatActivity implements JsonResponse, View.On
                     fua.execute(aa);
                 }
                 } catch(Exception e){
+
+                    Toast.makeText(getApplicationContext(), "Eeeeeeeeeee : ",Toast.LENGTH_LONG).show();
                     Toast.makeText(getApplicationContext(), "Exception upload : " + e, Toast.LENGTH_SHORT).show();
                 }
             }
@@ -331,26 +346,26 @@ public class Coachreg extends AppCompatActivity implements JsonResponse, View.On
                 }
                 }
             if (method.equalsIgnoreCase("viewclub")) {
-                Toast.makeText(getApplicationContext(),"&&&&&&&&&&&&&&&&&&",Toast.LENGTH_LONG).show();
+//                Toast.makeText(getApplicationContext(),"&&&&&&&&&&&&&&&&&&",Toast.LENGTH_LONG).show();
 
                 status = jo.getString("status");
 
                 if (status.equalsIgnoreCase("success")) {
-                    Toast.makeText(getApplicationContext(),"$$$$$$$$$$$$$$$$$$$",Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getApplicationContext(),"$$$$$$$$$$$$$$$$$$$",Toast.LENGTH_LONG).show();
                     JSONArray ja1 = (JSONArray) jo.getJSONArray("data");
                     Log.d("pearl", status);
                     clubname = new String[ja1.length()];
                     clubid = new String[ja1.length()];
                     value = new String[ja1.length()];
 
-                    Toast.makeText(getApplicationContext(),"kkkkkkkkkkkkkkk",Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getApplicationContext(),"kkkkkkkkkkkkkkk",Toast.LENGTH_LONG).show();
 
 
 
                     for (int i = 0; i < ja1.length(); i++) {
                         clubname[i] = ja1.getJSONObject(i).getString("club");
                         clubid[i] = ja1.getJSONObject(i).getString("club_id");
-                        Toast.makeText(getApplicationContext(),"$$$$$$$$$$$$$$$$$$$",Toast.LENGTH_LONG).show();
+//                        Toast.makeText(getApplicationContext(),"$$$$$$$$$$$$$$$$$$$",Toast.LENGTH_LONG).show();
 
 
                         value[i] = "Clubnme: " + clubname[i] ;

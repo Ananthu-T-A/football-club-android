@@ -41,12 +41,19 @@ public class PlayerHome extends AppCompatActivity implements JsonResponse {
         Button b7 = findViewById(R.id.ranks);
         Button b8 = findViewById(R.id.noc);
         Button b9 = findViewById(R.id.complaints);
+        Button b0 = findViewById(R.id.lg);
 
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),Player_view_profile.class));
+            }
+        });
+        b0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),Login.class));
             }
         });
 

@@ -15,10 +15,11 @@
         android:gravity="center"
         android:textSize="30dp"
         android:textStyle="bold"
-        android:textColor="@color/player"
-        android:layout_marginTop="20dp"
+        android:background="@color/player"
+        android:textColor="@color/white"
+
         android:layout_height="wrap_content"
-        android:text="Player Rank" />
+        android:text="PLAYER RANK" />
 
     <ListView
         android:id="@+id/lv"

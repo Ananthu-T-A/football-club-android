@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -14,7 +16,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FootballClub"
         android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true"
         tools:targetApi="31">
+        <activity
+            android:name=".Coach_view_practicesections"
+            android:exported="false" />
+        <activity
+            android:name=".Coach_add_practice_sections"
+            android:exported="false" />
+        <activity
+            android:name=".Coach_view_players"
+            android:exported="false" />
         <activity
             android:name=".PlayerComplaints"
             android:exported="false">
@@ -121,6 +133,21 @@
             android:exported="false" />
         <activity
             android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".Coch_view_profile"
+            android:exported="false" />
+        <activity
+            android:name=".ChatHere2"
+            android:exported="false" />
+        <activity
+            android:name=".Coach_view_news"
+            android:exported="false" />
+        <activity
+            android:name=".Coach_view_fixture"
+            android:exported="false" />
+        <activity
+            android:name=".CoachComplaints"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

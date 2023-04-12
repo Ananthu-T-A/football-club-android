@@ -6,7 +6,7 @@
     android:gravity="top"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:background="@color/player"
+    android:background="@color/white"
     tools:context=".PlayerComplaints">
 
 
@@ -14,13 +14,13 @@
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+
         android:gravity="center"
         android:textSize="25dp"
         android:background="@color/player"
         android:textColor="#e3e3e3"
         android:textStyle="bold|italic"
-        android:text="Complaints" />
+        android:text="COMPLAINTS" />
 
     <EditText
         android:id="@+id/complaint"

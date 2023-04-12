@@ -3,54 +3,77 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:background="@drawable/bgg"
     android:layout_height="match_parent"
-    tools:context=".Login">
-
+    android:gravity="center"
+    android:background="@color/player"
+    android:orientation="vertical"
+    tools:context=".Coach_add_practice_sections">
 
 
     <TextView
         android:id="@+id/textView"
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:textColor="@color/secondary"
         android:textStyle="bold"
         android:padding="10dp"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LOGIN HERE" />
+        android:text="Add Practice Sections" />
 
     <EditText
-        android:id="@+id/uname"
+        android:id="@+id/practice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:textColor="@color/player"
         android:textColorHint="#125003"
-        android:padding="15dp"
+        android:padding="10dp"
         android:background="@drawable/custom_input"
         android:layout_margin="10dp"
         android:inputType="textPersonName"
-        android:hint="Username" />
+        android:hint="practice" />
 
     <EditText
-        android:id="@+id/pass"
+        android:id="@+id/place"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:textColor="@color/player"
         android:textColorHint="#125003"
         android:background="@drawable/custom_input"
-        android:padding="15dp"
+        android:padding="10dp"
         android:layout_margin="10dp"
-        android:inputType="textPassword"
-        android:hint="password" />
+        android:inputType="textPersonName"
+        android:hint="place" />
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/player"
+        android:textColorHint="#125003"
+        android:background="@drawable/custom_input"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:inputType="textPersonName"
+        android:hint="date" />
+    <EditText
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/player"
+        android:textColorHint="#125003"
+        android:background="@drawable/custom_input"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:inputType="textPersonName"
+        android:hint="time" />
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/lgbtn"
+        android:id="@+id/submit"
         android:layout_width="200dp"
         android:padding="20dp"
         android:backgroundTint="#C3EF92"
@@ -58,18 +81,7 @@
         android:textStyle="bold"
         android:background="@drawable/custombtn"
         android:layout_height="wrap_content"
-        android:text="Let Me In" />
-
-    <TextView
-        android:id="@+id/t2"
-        android:textSize="13dp"
-        android:textStyle="bold"
-        android:layout_marginTop="40dp"
-        android:textColor="#FFFFFF"
-        android:textAlignment="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Dont Have An Account Register Now....." />
+        android:text="Add" />
 
 
 </LinearLayout>

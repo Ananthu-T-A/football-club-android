@@ -18,7 +18,7 @@
         android:textColor="@color/player"
         android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
-        android:text="Coach Home" />
+        android:text="COACH HOME" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_marginHorizontal="20dp"
@@ -37,10 +37,10 @@
         android:background="@color/player"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:id="@+id/news"
+        android:id="@+id/newss"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="News" />
+        android:text="Players" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_marginHorizontal="20dp"
@@ -51,7 +51,7 @@
         android:id="@+id/practise"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Practise Section" />
+        android:text="Add Practise Section" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_marginHorizontal="20dp"
@@ -59,10 +59,10 @@
         android:background="@color/player"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:id="@+id/videos"
+        android:id="@+id/viewsec"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Videos" />
+        android:text="View Practice Sections" />
 
     <!--    <androidx.appcompat.widget.AppCompatButton-->
     <!--        android:layout_marginHorizontal="20dp"-->
@@ -81,20 +81,20 @@
         android:background="@color/player"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:id="@+id/complaints"
+        android:id="@+id/news"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Complaints" />
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="9dp"
-        android:background="@color/player"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:id="@+id/noc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Noc" />
+        android:text="news" />
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="9dp"-->
+<!--        android:background="@color/player"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textStyle="bold"-->
+<!--        android:id="@+id/noc"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Noc" />-->
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_marginHorizontal="20dp"
@@ -105,18 +105,18 @@
         android:id="@+id/ranks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ranks" />
+        android:text="Complaints" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="9dp"
-        android:background="@color/player"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:id="@+id/communication"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Communication" />
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="9dp"-->
+<!--        android:background="@color/player"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textStyle="bold"-->
+<!--        android:id="@+id/communication"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Communication" />-->
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_marginHorizontal="20dp"
@@ -132,7 +132,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="9dp"
-        android:background="#DF2A2A"
+        android:background="#0AC9E1"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:id="@+id/lg"

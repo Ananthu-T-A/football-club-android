@@ -7,20 +7,20 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Player_consultation">
+    tools:context=".CoachComplaints">
 
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:textSize="25dp"
         android:background="@color/player"
         android:textColor="#e3e3e3"
         android:textStyle="bold|italic"
-        android:text="CONSULTATION" />
+        android:text="Complaints" />
 
     <EditText
         android:id="@+id/complaint"
@@ -30,7 +30,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:padding="15dp"
-        android:hint="write your problem."
+        android:hint="type your complaint here.."
         android:textColor="#FFFFFF"
         android:textColorHint="#DFDBDB"
         android:layout_marginTop="20dp"

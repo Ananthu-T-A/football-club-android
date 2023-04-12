@@ -26,10 +26,13 @@
     <TextView
         android:id="@+id/textView"
         android:textSize="30dp"
+        android:background="@color/player"
         android:padding="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome User" />
+        android:text="COACH REGISTRATION" />
 
 
             <Spinner
@@ -164,7 +167,7 @@
         android:backgroundTint="#C3EF92"
         android:background="@drawable/custombtn"
         android:layout_height="wrap_content"
-        android:text="Lets Go" />
+        android:text="Submit" />
 
         </LinearLayout>
 
